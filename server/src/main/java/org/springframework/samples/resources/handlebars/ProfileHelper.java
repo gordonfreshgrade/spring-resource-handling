@@ -24,7 +24,10 @@ public class ProfileHelper implements Helper<Object> {
 	@Override
 	public CharSequence apply(final Object context, final Options options)
 			throws IOException {
+
+		System.out.println("Handling charSequence: profile:  " + profiles.toString());
 		if (profiles.contains(context)) {
+			System.out.println("found profile: " + options.fn());
 			return options.fn();
 		} else {
 			return options.inverse();

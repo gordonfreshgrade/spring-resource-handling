@@ -18,9 +18,19 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1 id="greeting">{insert greeting here}</h1>
+        <h1 id="greeting"></h1>
     </div>
     <div id="logo"></div>
+</div>
+
+<div>
+    <h2>A note on less, scss and sass... and demonstrating handlebars </h2>
+    {{#hasProfile "development"}}
+        <h2>In dev mode <a href="{{src "/less/style.less"}}">a LESS stylesheet is used</a> (see HTML source of this page)</h2>
+        <h2>In production mode less/styles.less would, when configured, be watched and transpiled by the Spring framework to /css/style.css</h2>
+    {{else}}
+        <h2>In production mode <a href="{{src "/css/style.css"}}">a transpiled version of that stylesheet is used</a> (see HTML source of this page)</h2>
+    {{/hasProfile}}
 </div>
 </body>
 </html>

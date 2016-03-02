@@ -24,7 +24,7 @@
     <spring:url value="/css/main.css" htmlEscape="true" var="springUrl" />
     <div class="container">
             <div class="jumbotron">
-            <h1 id="greeting">{insert greeting here}</h1>
+            <h1 id="greeting">server{insert greeting here}</h1>
     </div>
     <h2>Spring URL: ${springUrl}</h2>
     <h2>JSTL URL: ${jstlUrl}</h2>

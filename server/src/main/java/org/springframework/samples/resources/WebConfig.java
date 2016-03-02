@@ -41,7 +41,13 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	@Value("${resources.projectroot:}")
 	private String projectRoot;
 
-	@Value("${app.version:}")
+//	@Value("${app.version:}")
+//	private String appVersion;
+
+	@Value("${config.AUTH_URL}")
+	private String authUrl;
+
+	@Value("${config.APP_VERSION}")
 	private String appVersion;
 
 
@@ -108,6 +114,8 @@ public class WebConfig extends WebMvcConfigurerAdapter {
 	}
 
 	protected String getApplicationVersion() {
+		System.out.println("getApplicationVersion appVersion: " + appVersion);
+		System.out.println("getApplicationVersion authUrl: " + authUrl);
 		return this.env.acceptsProfiles("development") ? "dev" : this.appVersion;
 	}
 
