@@ -1,0 +1,16 @@
+<script>
+  var queryString = {
+    get: function(key) {
+      if(!this.query) var query = this._parse();
+      return query[key];
+    },
+
+    _parse: function() {
+      return window.location.search.substring(1).split('&').reduce(function(out, str) {
+        var pair = str.split('=');
+        out[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+        return out;
+      }, {});
+    }
+  };
+</script>

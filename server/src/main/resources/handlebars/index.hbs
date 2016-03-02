@@ -11,26 +11,55 @@
     <script src="{{src "/lib/system.js"}}"></script>
     <script src="{{src "/config.js"}}"></script>
     <script>
-        System.config({baseURL: "/{{applicationVersion}}"});
+        System.config({baseURL: "/{{appVersion}}"});
         System.import('app/app');
     </script>
+    {{> partials/mainCSS}}
+    {{> partials/webfonts}}
+    {{> partials/iePolyfills}}
+    {{> partials/mixpanel}}
+
 </head>
 <body>
-<div class="container">
-    <div class="jumbotron">
-        <h1 id="greeting"></h1>
-    </div>
-    <div id="logo"></div>
-</div>
 
-<div>
-    <h2>A note on less, scss and sass... and demonstrating handlebars </h2>
-    {{#hasProfile "development"}}
-        <h2>In dev mode <a href="{{src "/less/style.less"}}">a LESS stylesheet is used</a> (see HTML source of this page)</h2>
-        <h2>In production mode less/styles.less would, when configured, be watched and transpiled by the Spring framework to /css/style.css</h2>
-    {{else}}
-        <h2>In production mode <a href="{{src "/css/style.css"}}">a transpiled version of that stylesheet is used</a> (see HTML source of this page)</h2>
-    {{/hasProfile}}
-</div>
+    {{! LIBS --------------------------------------------------------------- }}
+    {{> partials/modernizr}}
+
+
+    <div class="container">
+        <div class="jumbotron">
+            <h3 id="greeting"></h3>
+        </div>
+        <div id="logo"></div>
+        <hr/>
+        <div>
+            <h2><span><strong><i>application.yml</i></strong></span> based resource strings</h2>
+            <h4>appVersion is: {{appVersion}}</h4>
+        </div>
+        <br>
+        <hr/>
+
+        <div>
+            <h2><span><strong><i>application.properties</i></strong></span> based resource strings</h2>
+            <h4><span><strong><i>Transloadit Key:</i></strong></span> {{transloaditKey}}</h4>
+            <h4><span><strong><i>Transloadit File Id:</i></strong></span> {{transloaditFileId}}</h4>
+            <h4><span><strong><i>Transloadit Image Id:</i></strong></span> {{transloaditImageId}}</h4>
+            <h4><span><strong><i>Transloadit Video Id:</i></strong></span> {{transloaditVideoId}}</h4>
+        </div>
+        <br>
+        <hr/>
+        <div>
+
+            <h2><span><strong><i>Registered handlebars helper</i></strong></span> demo of #hasProfile (development v production)</h2>
+            {{#hasProfile "development"}}
+                <h3>In dev mode <a href="{{src "/less/style.less"}}">a LESS stylesheet is used</a> (see HTML source of this page)</h3>
+                <h3>In production mode less/styles.less would, when configured, be watched and transpiled by the Spring framework to /css/style.css</h3>
+            {{else}}
+                <h3>In production mode <a href="{{src "/css/style.css"}}">a transpiled version of that stylesheet is used</a> (see HTML source of this page)</h3>
+            {{/hasProfile}}
+        </div>
+    </div>
+
 </body>
 </html>
+

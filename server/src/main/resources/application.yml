@@ -8,20 +8,22 @@ spring:
     template:
       cache: false
       prefix: classpath:/groovy/
+
+
 app:
   version: de4db33f
 config:
-  AUTH_URL: localhost
-  NOTIFY_HOST: localhost
-  UPLOAD_HOST: localhost
-  NGROKMODE: mode_ok
+  AUTH_URL: pl_AUTH_URL_localhost
+  NOTIFY_HOST: pl_NOTIFY_HOST_localhost
+  UPLOAD_HOST: pl_UPLOAD_HOST_localhost
+  NGROKMODE: pl_NGROKMODE_mode_ok
   AJAX_PROTOCOL: false
   AJAX_URL_START: 0
-  TRANSLOADIT_KEY: 1234
-  TRANSLOADIT_FILE_TEMPLATE_ID:  5678
-  TRANSLOADIT_IMAGE_TEMPLATE_ID: 9ABC
-  TRANSLOADIT_VIDEO_TEMPLATE_ID: DEF0
+  TRANSLOADIT_KEY: tl_key
+  TRANSLOADIT_FILE_TEMPLATE_ID:  tl_file_id
+  TRANSLOADIT_IMAGE_TEMPLATE_ID: tl_image_id
+  TRANSLOADIT_VIDEO_TEMPLATE_ID: tl_video_id
   MIXPANEL_TOKEN: mx12345
   SENDER_ID: send12345
   BUGSENSE_API_KEY_STUDENT: sense12345
-  APP_VERSION: 1.0
+  APP_VERSION: 1.0.0

@@ -4,7 +4,7 @@ define([], function() {
 
     return {
         getMessage: function() {
-            return "model message!";
+            return "web model message!";
         }
     }
 });

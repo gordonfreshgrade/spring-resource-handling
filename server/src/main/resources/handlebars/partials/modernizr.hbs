@@ -1,0 +1,9 @@
+<script src="/lib/modernizr.custom.js"></script>
+<script type="text/javascript">
+Modernizr.addTest('volumecontrol', function() {
+  // Tested Element
+	var test = document.createElement('audio');
+	test.volume = 0.5;
+	return Modernizr.audio && test.volume === 0.5;
+});
+</script>
